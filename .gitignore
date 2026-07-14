@@ -39,3 +39,7 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# collected user data (waitlist & contact submissions)
+/data/waitlist.json
+/data/contacts.json
