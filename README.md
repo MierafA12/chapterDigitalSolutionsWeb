@@ -1,36 +1,69 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Chapter Digital Solutions — Company Website
+
+Official company website for **Chapter Digital Solutions**, built with Next.js, TypeScript, Tailwind CSS, and Framer Motion.
+
+## Tech Stack
+
+- **Next.js 16** (App Router)
+- **TypeScript**
+- **Tailwind CSS v4**
+- **shadcn/ui-style components** (Button, Card, Dialog, Input)
+- **Framer Motion** (scroll animations)
+- **Vercel** (recommended deployment)
+
+## Pages
+
+| Route       | Description                          |
+| ----------- | ------------------------------------ |
+| `/`         | Home — hero, services, EthioCloud    |
+| `/about`    | Company story, values, technologies  |
+| `/products` | EthioCloud and future products       |
+| `/blog`     | Coming soon placeholder              |
+| `/contact`  | Contact info and message form        |
+| `/privacy`  | Privacy Policy                       |
+| `/terms`    | Terms of Service                     |
 
 ## Getting Started
 
-First, run the development server:
-
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Waitlist & Contact Forms
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- **Waitlist** (`/api/waitlist`) — collects emails via the "Join the Waitlist" button
+- **Contact** (`/api/contact`) — stores contact form submissions
 
-## Learn More
+Locally, submissions are saved to:
 
-To learn more about Next.js, take a look at the following resources:
+- `data/waitlist.json`
+- `data/contacts.json`
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+> **Note for production:** Vercel's serverless filesystem is ephemeral. For production, connect a persistent store (e.g. Supabase, Vercel Postgres, Resend Audiences, or Mailchimp).
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Customization
+
+Edit `src/lib/constants.ts` to update:
+
+- Company email and location
+- Social media links
+- Navigation items
 
 ## Deploy on Vercel
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+1. Push this repo to GitHub
+2. Import the project at [vercel.com/new](https://vercel.com/new)
+3. Deploy — no environment variables required for the basic site
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Color Palette
+
+| Color      | Hex       |
+| ---------- | --------- |
+| Primary    | `#8B5E3C` |
+| Dark Brown | `#5C4033` |
+| Sand       | `#D6B98C` |
+| Cream      | `#F8F5F2` |
+| Accent     | `#C89B3C` |
