@@ -1,22 +1,17 @@
 import Link from "next/link";
 import {
-  Linkedin,
-  Github,
-  Facebook,
   Send,
-  Music2,
-  Youtube,
 } from "lucide-react";
 import { Logo } from "@/components/Logo";
 import { siteConfig } from "@/lib/constants";
 
 const socialIcons = [
-  { href: siteConfig.social.linkedin, icon: Linkedin, label: "LinkedIn" },
-  { href: siteConfig.social.github, icon: Github, label: "GitHub" },
-  { href: siteConfig.social.facebook, icon: Facebook, label: "Facebook" },
-  { href: siteConfig.social.telegram, icon: Send, label: "Telegram" },
-  { href: siteConfig.social.tiktok, icon: Music2, label: "TikTok" },
-  { href: siteConfig.social.youtube, icon: Youtube, label: "YouTube" },
+  { href: siteConfig.social.linkedin, label: "LinkedIn" },
+  { href: siteConfig.social.github, label: "GitHub" },
+  { href: siteConfig.social.facebook, label: "Facebook" },
+  { href: siteConfig.social.telegram, label: "Telegram" },
+  { href: siteConfig.social.tiktok, label: "TikTok" },
+  { href: siteConfig.social.youtube, label: "YouTube" },
 ];
 
 export function Footer() {
@@ -56,7 +51,7 @@ export function Footer() {
               Connect With Us
             </h3>
             <div className="flex gap-3">
-              {socialIcons.map(({ href, icon: Icon, label }) => (
+              {socialIcons.map(({ href, label }) => (
                 <a
                   key={label}
                   href={href}
@@ -65,7 +60,7 @@ export function Footer() {
                   aria-label={label}
                   className="flex h-10 w-10 items-center justify-center rounded-xl bg-white/10 text-cream/80 transition-all hover:bg-accent hover:text-white"
                 >
-                  <Icon className="h-4 w-4" />
+                  <Send className="h-4 w-4" />
                 </a>
               ))}
             </div>
