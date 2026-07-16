@@ -1,8 +1,13 @@
 import type { Metadata } from "next";
 import {
+  Briefcase,
+  Code,
   Mail,
   MapPin,
+  Music2,
+  Play,
   Send,
+  Users,
 } from "lucide-react";
 import { ContactForm } from "@/components/ContactForm";
 import { FadeIn } from "@/components/FadeIn";
@@ -16,12 +21,12 @@ export const metadata: Metadata = {
 };
 
 const socialLinks = [
-  { href: siteConfig.social.linkedin, label: "LinkedIn" },
-  { href: siteConfig.social.github, label: "GitHub" },
-  { href: siteConfig.social.facebook, label: "Facebook" },
-  { href: siteConfig.social.telegram, label: "Telegram" },
-  { href: siteConfig.social.tiktok, label: "TikTok" },
-  { href: siteConfig.social.youtube, label: "YouTube" },
+  { href: siteConfig.social.linkedin, label: "LinkedIn", Icon: Briefcase },
+  { href: siteConfig.social.github, label: "GitHub", Icon: Code },
+  { href: siteConfig.social.facebook, label: "Facebook", Icon: Users },
+  { href: siteConfig.social.telegram, label: "Telegram", Icon: Send },
+  { href: siteConfig.social.tiktok, label: "TikTok", Icon: Music2 },
+  { href: siteConfig.social.youtube, label: "YouTube", Icon: Play },
 ];
 
 export default function ContactPage() {
@@ -68,7 +73,7 @@ export default function ContactPage() {
                   Follow Us
                 </h3>
                 <div className="flex flex-wrap gap-3">
-                  {socialLinks.map(({ href, label }) => (
+                  {socialLinks.map(({ href, label, Icon }) => (
                     <a
                       key={label}
                       href={href}
@@ -77,7 +82,7 @@ export default function ContactPage() {
                       aria-label={label}
                       className="flex h-11 w-11 items-center justify-center rounded-xl border border-border bg-card text-muted transition-all hover:border-primary/30 hover:bg-primary/5 hover:text-primary"
                     >
-                      <Send className="h-5 w-5" />
+                      <Icon className="h-5 w-5" />
                     </a>
                   ))}
                 </div>
